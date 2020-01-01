@@ -58,11 +58,14 @@ body {
     padding: 7px;
     display: flex;
     border-radius: 7px;
+    
 }
 
 #lists {
     background-color: #FFFFFF;
     padding-bottom: 10px;
+    max-height: 353px;
+    overflow-y: scroll;
 }
 
 #lists p {
@@ -92,7 +95,7 @@ body {
    padding-right: 10px; 
 }
 .a-item > div {
-    width: 340px;
+    width: 322px;
     overflow: hidden;
     background-color: #FFFFFF;
     padding-left: 10px;
