@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todolist.component.css']
 })
 export class TodolistComponent implements OnInit {
-  myTask: string[] = ["Task1", "Task2", "Task3"];
+  myTask: string[] = ["BBQ Party", "Adda with friends", "Tour plans"];
   newTask: string;
 
   constructor() { }
