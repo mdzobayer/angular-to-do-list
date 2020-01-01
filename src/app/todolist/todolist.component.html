@@ -1,0 +1,27 @@
+<div class="flex-container">
+    <div class="main">
+        <section class="input-section">
+            <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()" placeholder="What will you do today ?">
+            <button (click)="addTask()">ADD</button>
+        </section>
+        <br />
+        <div class="horizontal-line">
+            <hr>
+        </div>
+        <br />
+        <div class="output-section">
+            <section id="lists">
+                <div *ngFor="let aTask of myTask" fxLayout="row" fxLayoutAlign="space-between center">
+                    <p>{{aTask}}</p>
+                    <button (click)="removeTask(aTask)">Remove</button>
+                    <hr>
+                </div>
+
+            </section>
+        </div>
+        <br />
+        <div class="horizontal-line">
+            <hr>
+        </div>
+    </div>
+</div>
