@@ -9,7 +9,7 @@
             <hr>
         </div>
         <br />
-        <div class="output-section">
+        <div class="output-section" *ngIf="myTask.length > 0">
             <section id="lists">
                 <div class="a-item" *ngFor="let aTask of myTask">
                     <div>
@@ -24,7 +24,7 @@
             </section>
         </div>
         <br />
-        <div class="horizontal-line">
+        <div class="horizontal-line" *ngIf="myTask.length > 0">
             <hr>
         </div>
     </div>
