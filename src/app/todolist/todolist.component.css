@@ -95,7 +95,7 @@ body {
    padding-right: 10px; 
 }
 .a-item > div {
-    width: 322px;
+    width: 395px;
     overflow: hidden;
     background-color: #FFFFFF;
     padding-left: 10px;
@@ -121,4 +121,8 @@ body {
 #lists p {
     font-size: 21px;
     height: 30px;
+}
+
+.a-item img {
+    margin: 10px 5px;
 }
