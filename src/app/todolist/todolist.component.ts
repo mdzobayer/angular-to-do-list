@@ -15,8 +15,8 @@ export class TodolistComponent implements OnInit {
   }
 
   onKeyUp() {
-
-    if (this.newTask !== "") {
+    this.newTask = this.newTask.trim();
+    if (this.newTask.length > 0) {
       this.myTask.push(this.newTask);
       console.log("New Task is: " + this.newTask);
     }
@@ -24,7 +24,8 @@ export class TodolistComponent implements OnInit {
   }
 
   addTask() {
-    if (this.newTask !== "") {
+    this.newTask = this.newTask.trim();
+    if (this.newTask.length > 0) {
       this.myTask.push(this.newTask);
       console.log("New Task is: " + this.newTask);
     }
