@@ -11,12 +11,13 @@
         <br />
         <div class="output-section">
             <section id="lists">
-                <div *ngFor="let aTask of myTask" fxLayout="row" fxLayoutAlign="space-between center">
-                    <p>{{aTask}}</p>
+                <div class="a-item" *ngFor="let aTask of myTask">
+                    <div>
+                        <p>{{aTask}}</p>
+                    </div>
                     <button (click)="removeTask(aTask)">Remove</button>
                     <hr>
-                </div>
-
+                    </div>
             </section>
         </div>
         <br />
