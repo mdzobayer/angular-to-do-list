@@ -1,31 +1,37 @@
-<div class="flex-container">
-    <div class="main">
-        <section class="input-section">
-            <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()" placeholder="What will you do today ?">
-            <button (click)="addTask()">ADD</button>
-        </section>
-        <br />
-        <div class="horizontal-line">
-            <hr>
-        </div>
-        <br />
-        <div class="output-section" *ngIf="myTask.length > 0">
-            <section id="lists">
-                <div class="a-item" *ngFor="let aTask of myTask">
-                    <div>
-                        <p>{{aTask}}</p>
-                    </div>
-                    
-                    <!-- <button (click)="removeTask(aTask)">Remove</button> -->
-                    <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete">
-            
-                    <hr>
-                    </div>
+<div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div>
+            <section class="input-section">
+                <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()"
+                    placeholder="What will you do today ?">
+                <button (click)="addTask()">ADD</button>
             </section>
+            <br />
+            <div class="horizontal-line">
+                <hr>
+            </div>
         </div>
-        <br />
-        <div class="horizontal-line" *ngIf="myTask.length > 0">
-            <hr>
+        <div>
+            <div class="output-section" *ngIf="myTask.length > 0">
+                <section id="lists">
+                    <div class="a-item" *ngFor="let aTask of myTask">
+                        <div>
+                            <p>{{aTask}}</p>
+                        </div>
+
+                        <!-- <button (click)="removeTask(aTask)">Remove</button> -->
+                        <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete">
+
+                        <hr>
+                    </div>
+                </section>
+            </div>
+            <br />
+            <div class="horizontal-line" *ngIf="myTask.length > 0">
+                <hr>
+            </div>
+
         </div>
+
     </div>
 </div>
