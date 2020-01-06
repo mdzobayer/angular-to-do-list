@@ -126,3 +126,13 @@ body {
 .a-item img {
     margin: 10px 5px;
 }
+
+.edit-input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.display-task {
+    padding: 5px 50px 5px 0px;
+    font-size: 20px;
+}

@@ -1,5 +1,5 @@
 <div>
-    <div fxLayout.lt-md="column" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
+    <div style="margin-top: 100px;" fxLayout.lt-md="column" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px">
         <div>
             <section class="input-section">
                 <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()"
@@ -15,13 +15,23 @@
             <div class="output-section" *ngIf="myTask.length > 0">
                 <section id="lists">
                     <div class="a-item" *ngFor="let aTask of myTask">
-                        <div>
-                            <p>{{aTask}}</p>
-                        </div>
-
+                        <div *ngIf="aTask.editable == false">
+                            <span class="display-task">{{aTask.description}}</span>
+                            <button class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
                         <!-- <button (click)="removeTask(aTask)">Remove</button> -->
                         <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete">
 
+                        </div>
+                        <div *ngIf="aTask.editable == true">
+                            <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
+                    placeholder="What will you do today ?">
+                    <button class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
+                    <!-- <button (click)="removeTask(aTask)">Remove</button> -->
+                    <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete">
+
+                        </div>
+
+                        
                         <hr>
                     </div>
                 </section>
