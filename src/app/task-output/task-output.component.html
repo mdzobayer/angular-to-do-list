@@ -1,0 +1,22 @@
+<div *ngIf="taskList.myTask.length > 0">
+    <!-- <p>{{taskList.myTask.length}}</p> -->
+    <div *ngFor="let aTask of taskList.myTask">
+        <div *ngIf="aTask.editable == false">
+            <span>{{aTask.description}}</span>
+            <button class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
+            <button (click)="removeTask(aTask)">Remove</button>
+            <!-- <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete"> -->
+
+        </div>
+        <div *ngIf="aTask.editable == true">
+            <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
+                placeholder="What will you do today ?">
+            <button class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
+            <button (click)="removeTask(aTask)">Remove</button>
+            <!-- <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete"> -->
+
+        </div>
+        <hr>
+    </div>
+
+</div>

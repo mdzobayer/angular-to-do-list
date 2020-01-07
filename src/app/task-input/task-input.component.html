@@ -1,0 +1,11 @@
+<div>
+    <section>
+        <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()"
+            placeholder="What will you do today ?">
+        <button (click)="addTask()">ADD</button>
+    </section>
+    <br />
+    <div class="btn btn-primary">
+        <hr>
+    </div>
+</div>

@@ -5,12 +5,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodolistComponent } from './todolist/todolist.component';
-import { FlexLayoutModule } from '@angular/flex-layout'
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TaskInputComponent } from './task-input/task-input.component';
+import { TaskOutputComponent } from './task-output/task-output.component'
+import { TaskListService } from './task-list.service';
 @NgModule({
   declarations: [
     AppComponent,
-    TodolistComponent
+    TodolistComponent,
+    TaskInputComponent,
+    TaskOutputComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +22,9 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     AppRoutingModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    TaskListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
