@@ -1,22 +1,35 @@
-<div *ngIf="taskList.myTask.length > 0">
+<div class="output" *ngIf="taskList.myTask.length > 0">
     <!-- <p>{{taskList.myTask.length}}</p> -->
-    <div *ngFor="let aTask of taskList.myTask">
-        <div *ngIf="aTask.editable == false">
-            <span>{{aTask.description}}</span>
-            <button class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
-            <button (click)="removeTask(aTask)">Remove</button>
-            <!-- <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete"> -->
+    <table *ngFor="let aTask of taskList.myTask" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="space-between center">
+        <tr *ngIf="aTask.editable == false">
+            <td class="item">{{aTask.description}}</td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+            </td>
 
-        </div>
-        <div *ngIf="aTask.editable == true">
-            <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
-                placeholder="What will you do today ?">
-            <button class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
-            <button (click)="removeTask(aTask)">Remove</button>
-            <!-- <img (click)="removeTask(aTask)" src="assets/delete(24px).png" alt="Delete"> -->
 
+
+        </tr>
+        <tr *ngIf="aTask.editable == true">
+            <td>
+                <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
+                    placeholder="What will you do today ?">
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
+
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+            </td>
+
+        </tr>
+        <div>
+            <hr />
         </div>
-        <hr>
-    </div>
+    </table>
 
 </div>

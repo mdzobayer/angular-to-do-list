@@ -1,11 +1,4 @@
-<div>
-    <section>
-        <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()"
-            placeholder="What will you do today ?">
-        <button (click)="addTask()">ADD</button>
-    </section>
-    <br />
-    <div class="btn btn-primary">
-        <hr>
-    </div>
+<div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="4px">
+    <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()" placeholder="What will you do today ?">
+    <button class="btn btn-primary" type="button" (click)="addTask()">ADD</button>
 </div>

@@ -1,0 +1,14 @@
+div {
+    background-color: #AE6BF8;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+div > input {
+    padding: 10px 30px 10px 10px;
+    
+    /* margin-top: 2px; */
+}
+button {
+    padding: 10px 20px 10px 20px;
+}
