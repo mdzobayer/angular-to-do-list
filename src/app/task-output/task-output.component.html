@@ -1,35 +1,30 @@
 <div class="output" *ngIf="taskList.myTask.length > 0">
     <!-- <p>{{taskList.myTask.length}}</p> -->
-    <table *ngFor="let aTask of taskList.myTask" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="space-between center">
-        <tr *ngIf="aTask.editable == false">
-            <td class="item">{{aTask.description}}</td>
-            <td>
+    <table>
+        <tr *ngFor="let aTask of taskList.myTask">
+
+            <td class="item" *ngIf="aTask.editable == false">{{aTask.description}}</td>
+            <td *ngIf="aTask.editable == false">
                 <button type="button" class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
             </td>
-            <td>
+            <td *ngIf="aTask.editable == false">
                 <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
             </td>
 
 
 
-        </tr>
-        <tr *ngIf="aTask.editable == true">
-            <td>
+            <td *ngIf="aTask.editable == true">
                 <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
                     placeholder="What will you do today ?">
             </td>
-            <td>
+            <td *ngIf="aTask.editable == true">
                 <button type="button" class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
 
             </td>
-            <td>
+            <td *ngIf="aTask.editable == true">
                 <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
             </td>
-
         </tr>
-        <div>
-            <hr />
-        </div>
     </table>
 
 </div>

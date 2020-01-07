@@ -26,10 +26,13 @@ table {
     padding: 10px;
     width: 100%;
 }
- tr {
+tr {
     border-bottom: 1px solid rgb(218, 218, 218);
     border-collapse: collapse;
-    padding-bottom: 4px;
+    
+}
+td {
+    padding: 5px;
 }
 /* .item {
     width: 300px;
