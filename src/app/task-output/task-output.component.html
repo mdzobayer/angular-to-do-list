@@ -2,28 +2,33 @@
     <!-- <p>{{taskList.myTask.length}}</p> -->
     <table>
         <tr *ngFor="let aTask of taskList.myTask">
+            <span *ngIf="aTask.editable == false; then regularList else editableList"></span>
+            <ng-template #regularList>
+                <td class="item">{{aTask.description}}</td>
+                <td >
+                    <button type="button" class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+                </td>
+            </ng-template>
+            
 
-            <td class="item" *ngIf="aTask.editable == false">{{aTask.description}}</td>
-            <td *ngIf="aTask.editable == false">
-                <button type="button" class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
-            </td>
-            <td *ngIf="aTask.editable == false">
-                <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
-            </td>
-
-
-
-            <td *ngIf="aTask.editable == true">
-                <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
-                    placeholder="What will you do today ?">
-            </td>
-            <td *ngIf="aTask.editable == true">
-                <button type="button" class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
-
-            </td>
-            <td *ngIf="aTask.editable == true">
-                <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
-            </td>
+            <ng-template #editableList>
+                <td>
+                    <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
+                        placeholder="What will you do today ?">
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
+    
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+                </td>
+            </ng-template>
+            
+            
         </tr>
     </table>
 
