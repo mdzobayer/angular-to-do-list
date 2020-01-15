@@ -9,6 +9,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { TaskInputComponent } from './task-input/task-input.component';
 import { TaskOutputComponent } from './task-output/task-output.component'
 import { TaskListService } from './task-list.service';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from  '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,11 @@ import { TaskListService } from './task-list.service';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [
     TaskListService

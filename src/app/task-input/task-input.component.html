@@ -1,4 +1,7 @@
-<div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="4px">
-    <input type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()" placeholder="What will you do today ?">
-    <button class="btn btn-primary" type="button" (click)="addTask()">ADD</button>
+<div fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="10px">
+    <mat-form-field>
+          <input matInput type="text" [(ngModel)]="newTask" (keyup.enter)="onKeyUp()" placeholder="What will you do today ?">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="button" (click)="addTask()">ADD</button>
 </div>

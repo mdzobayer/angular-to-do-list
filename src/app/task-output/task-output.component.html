@@ -6,25 +6,27 @@
             <ng-template #regularList>
                 <td class="item">{{aTask.description}}</td>
                 <td >
-                    <button type="button" class="btn btn-primary" (click)="editTask(aTask)">Edit</button>
+                    <button type="button" mat-raised-button color="primary" (click)="editTask(aTask)">Edit</button>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+                    <button type="button" mat-raised-button color="primary" (click)="removeTask(aTask)">Remove</button>
                 </td>
             </ng-template>
             
 
             <ng-template #editableList>
                 <td>
-                    <input class="edit-input" type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()"
-                        placeholder="What will you do today ?">
+                    <mat-form-field>
+                        <input matInput type="text" [(ngModel)]="aTask.description" (keyup.enter)="onKeyUp()">
+                    </mat-form-field>
+                    
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" (click)="doneEditTask(aTask)">Done</button>
+                    <button type="button" mat-raised-button color="primary" (click)="doneEditTask(aTask)">Done</button>
     
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" (click)="removeTask(aTask)">Remove</button>
+                    <button type="button" mat-raised-button color="primary" (click)="removeTask(aTask)">Remove</button>
                 </td>
             </ng-template>
             

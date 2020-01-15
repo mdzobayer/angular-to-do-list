@@ -1,14 +1,7 @@
 div {
-    background-color: #AE6BF8;
-    padding: 6px;
+    background-color: #ffffff;
+    padding: 5px;
     border-radius: 5px;
+    width: 0 40%;
 }
 
-div > input {
-    padding: 10px 30px 10px 10px;
-    
-    /* margin-top: 2px; */
-}
-button {
-    padding: 10px 20px 10px 20px;
-}
