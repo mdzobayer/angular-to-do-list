@@ -50,7 +50,7 @@ export class ReactiveComponent implements OnInit {
     });
     //console.log("After Push");
     console.log(this.myTask);
-    this.taskForm.value.description = "";
+    this.taskForm.get('description').setValue("");
   }
 
   RemoveTask(aTask:Task) {
@@ -62,15 +62,19 @@ export class ReactiveComponent implements OnInit {
     let index = this.myTask.indexOf(aTask);
     //this.myTask[index].editable = true;
     this.editable = true;
-    this.taskForm.value.description = aTask.description;
-    this.taskForm.value.id = index;
+
+    this.taskForm.get('description').setValue(aTask.description);
+    this.taskForm.get('id').setValue(index);
+
+    // this.taskForm.value.description = aTask.description;
+    // this.taskForm.value.id = index;
   }
 
   DoneEditTask() {
     let index = this.taskForm.value.id;
     this.myTask[index].description = this.taskForm.value.description;
-    this.taskForm.value.description = "";
-    this.taskForm.value.id = null;
+    this.taskForm.get('description').setValue("");
+    this.taskForm.get('id').setValue("");
     this.editable = false;
   }
 }
