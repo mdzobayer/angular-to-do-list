@@ -1,0 +1,16 @@
+<h3>Input</h3>
+<form [formGroup]="taskForm">
+    <input type="text" formControlName="description">
+    <button *ngIf="editable == false" (click)="AddReactiveTask()">Add Task</button>
+    <button *ngIf="editable == true" (click)="DoneEditTask()">Done</button>
+</form>
+
+<p>
+    {{this.taskForm.value | json}}
+</p>
+
+<h3>Output</h3>
+<p *ngFor="let aTask of myTask">{{aTask.description}}
+    <button (click)="EditTask(aTask)">Edit</button>
+    <button (click)="RemoveTask(aTask)">Delete</button>
+</p>
