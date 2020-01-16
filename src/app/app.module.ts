@@ -1,3 +1,4 @@
+import { ReactiveModule, ReactiveComponent } from './reactive/reactive.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
@@ -10,11 +11,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from  '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveComponent } from './reactive/reactive.component';
+//import { ReactiveComponent } from './reactive/component/reactive.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    ReactiveComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +25,9 @@ import { ReactiveComponent } from './reactive/reactive.component';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveModule,
+    ReactiveComponent
   ],
   providers: [
 

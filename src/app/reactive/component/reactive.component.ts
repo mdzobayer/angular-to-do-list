@@ -1,5 +1,5 @@
 import { FormBuilder } from '@angular/forms';
-import { Task } from './../Task';
+import { Task } from '../model/Task';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
