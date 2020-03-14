@@ -1,4 +1,4 @@
-import { ReactiveModule, ReactiveComponent } from './reactive/reactive.module';
+import { ReactiveModule} from './reactive/reactive.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
@@ -26,8 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ReactiveModule,
-    ReactiveComponent
+    ReactiveModule
   ],
   providers: [
 
